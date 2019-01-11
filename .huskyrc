@@ -1,0 +1,5 @@
+{
+  "hooks": {
+    "pre-push": "npm install && npm run lint && npm test"
+  }
+}
