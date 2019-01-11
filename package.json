@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "lint": "eslint .",
-    "test": "jasmine",
-    "coverage": "nyc jasmine"
+    "test": "mocha"
   },
   "keywords": [
     "rest",
@@ -24,8 +23,7 @@
     "should": "^7.1.0",
     "sinon": "^6.0.0",
     "supertest": "^3.3.0",
-    "istanbul": "^0.4.5",
-    "nyc": "^13.1.0"
+    "istanbul": "^0.4.5"
   },
   "dependencies": {
     "bearer-token": "^2.0.1",
