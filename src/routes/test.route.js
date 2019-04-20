@@ -1,3 +1,5 @@
+const TestController = require('../controllers/testController');
+
 const publicRoute = {
     method: 'get',
     path: '/public',
@@ -6,9 +8,7 @@ const publicRoute = {
     useWrap: false,
     useAuth: false,
     validations: {},
-    handler: (req, res) => { 
-        res.send('public route'); 
-    }
+    handler: TestController.publicRoute,
 };
 
 const privateRoute = {
@@ -19,9 +19,7 @@ const privateRoute = {
     useWrap: false,
     useAuth: true,
     validations: {},
-    handler: (req, res) => { 
-        res.send('private route'); 
-    }
+    handler: TestController.privateRoute,
 };
 
 module.exports = [
