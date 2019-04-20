@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "lint": "eslint .",
-    "test": "mocha"
+    "test": "jasmine"
   },
   "keywords": [
     "rest",
@@ -17,11 +17,8 @@
   "license": "ISC",
   "devDependencies": {
     "eslint": "^5.9.0",
-    "chai": "^4.1.2",
-    "mocha": "^5.2.0",
-    "husky": "^1.1.3",
-    "should": "^7.1.0",
-    "sinon": "^6.0.0",
+    "jasmine": "^3.3.1",
+    "jasmine-console-reporter": "^3.1.0",
     "supertest": "^3.3.0",
     "istanbul": "^0.4.5"
   },
