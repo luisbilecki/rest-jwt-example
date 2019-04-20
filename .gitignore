@@ -41,6 +41,7 @@ typings/
 !.eslintrc.json
 !.nvmrc
 !.huskyrc
+!.env.example
 
 tmp
 log
