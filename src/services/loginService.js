@@ -18,12 +18,12 @@ const loadPublicKey = () => {
 };
 
 // Generates a JWT Token using our key pairs
-const generateJWT = ({ userId, userEmail, userName }) => {
+const generateJWT = ({ userId, userEmail, userName, expiresIn = 60 }) => {
     const signOptions = {
         issuer: JWT_ISSUER, // identifier of the server or system issuing the token
         subject: userEmail, // username or email
         audience: JWT_AUDIENCE, // typically a dns name or user pool id (cognito, auth0)
-        expiresIn: '1h', // expiration time
+        expiresIn: expiresIn, // expiration time
         algorithm: 'RS256' // algorithm used to sign
     };
     const privateKey = loadPrivateKey();
