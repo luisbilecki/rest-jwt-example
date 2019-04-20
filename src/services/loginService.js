@@ -18,7 +18,7 @@ const loadPublicKey = () => {
 };
 
 // Generates a JWT Token using our key pairs
-const generateJWT = ({ userId, userEmail, userName, expiresIn = 60 }) => {
+const generateJWT = ({ userId, userEmail, userName, expiresIn = '1h' }) => {
     const signOptions = {
         issuer: JWT_ISSUER, // identifier of the server or system issuing the token
         subject: userEmail, // username or email
