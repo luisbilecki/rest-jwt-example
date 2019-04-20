@@ -7,7 +7,7 @@ const signInSchema = Joi.object().keys({
 });
 
 const validateLoginSchema = Joi.object().keys({
-    token: Joi.string().email().required()
+    token: Joi.string().required()
 });
 
 module.exports = {
