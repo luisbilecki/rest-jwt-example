@@ -6,6 +6,8 @@ const restify = require('restify'),
     corsMiddleware = require('restify-cors-middleware'),
     xss = require('xss-clean'),
     routes = require('./src/routes'),
+    jwt = require('restify-jwt-community'),
+    fs = require('fs'),
     PORT = process.env.PORT || 8000;
 
 // Create restify server instance
@@ -37,7 +39,14 @@ server.pre(cors.preflight);
 server.use(cors.actual);
 
 // Authentication
-// TODO: JWT
+server
+    .use(jwt({ 
+        secret:  fs.readFileSync('./public.key'), 
+        audience: process.env.AWS_COGNITO_AUDIENCE,
+        issuer: process.env.AWS_COGNITO_ISSUER,
+        algorithms: ['RS256'],
+        // ignoreExpiration: isTest()
+    }).unless({ path: routes.publicRoutes() }));
 
 // Sanitizing user inputs
 server.use(xss());

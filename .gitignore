@@ -44,3 +44,6 @@ typings/
 
 tmp
 log
+
+# Key files
+*.key

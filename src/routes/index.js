@@ -1,4 +1,3 @@
-
 const path = require('path'),
     filterFiles = require('filter-files'),
     isDir = require('is-directory'),
@@ -11,16 +10,16 @@ const { concat, flatten, pick, isArray, isEmpty } = require('lodash');
 const dirName = __dirname;
 
 const toArray = (value) => { 
-    return isArray(value) ? value : [value] 
+    return isArray(value) ? value : [value];
 };
 
 // Check if is valid route faile
 const isRouteFile = (fileName) => { 
-    return /((routes)|(route))\.js$/.test(fileName) 
+    return /((routes)|(route))\.js$/.test(fileName);
 };
 
 const getRouteFiles = () => {
-    return filterFiles.sync(dirName, (fp, dir, files, recurse) => {
+    return filterFiles.sync(dirName, (fp, dir, /* files, recurse */) => {
         if (isRouteFile(fp)) {
             return true;
         }
@@ -107,6 +106,6 @@ const publicRoutes = () => {
 };
 
 module.exports = {
-registerRoutes,
-publicRoutes,
+    registerRoutes,
+    publicRoutes,
 };
